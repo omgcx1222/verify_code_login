@@ -85,6 +85,32 @@ pnpm install
 
 
 
+## 设置公钥私钥（用于登录成功后颁发token）
+
+**可以不用**
+
+自行生成公钥私钥，替换`src/app/keys`目录下的文件
+
+用我的也可以，只不过这是个开源项目，**key已泄露，本地调试无所谓，线上环境请替换**
+
+#### 生成公钥私钥：
+
+打开终端（window需要git bash），分别执行
+
+```
+# 生成私钥
+genrsa -out private.key 2048
+```
+
+```
+# 生成公钥
+rsa -in private.key -pubout -out public.key
+```
+
+替换`src/app/keys`目录下的文件
+
+
+
 ## 启动
 
 在根目录下运行 `pnpm start`
